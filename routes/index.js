@@ -44,13 +44,36 @@ router.get('/books/:id', (req, res, next) => {
 
 router.get('/books/:id/edit', (req, res, next) => {
   Book.findOne({ _id: req.params.id })
-
     .then(book => {
       console.log(book)
       res.render('rest/bookEditForm', { book })
     })
     .catch(err => console.log(err))
 })
+//edit 
+router.post('/books/:id', (req, res, next) => {
+  const { title, Author, description, rating } = req.body
+  Book.update({ _id: req.params.id }, { $set: { title, Author, description, rating } })
+    .then(book => {
+      console.log(book)
+      res.redirect('/books')
+    })
+    .catch(err => console.log(err))
+})
+
+// remove 
+
+router.get('/books/:id/remove', (req, res, next) => {
+  Book.remove({ _id: req.params.id })
+    .then(book => {
+      console.log(book)
+      res.redirect('/books')
+    })
+    .catch(err => console.log(err))
+})
+
+
+
 
 
 

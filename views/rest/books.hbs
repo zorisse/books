@@ -1,8 +1,11 @@
-<h1>Books</h1>
+<div class="container">
+  <h1>Books</h1>
 
-<div>
   {{#each books}}
-  <h4> {{@key}}: {{this.title}}</h4>
-  <p><a href="/books/{{this._id}}"> {{this._id}}</a></p>
+  <div class="container mt-3">
+    <h4> {{@key}}: {{this.title}}</h4>
+    <p><a href="/books/{{this._id}}"> {{this._id}}</a></p>
+
+  </div>
   {{/each}}
 </div>
