@@ -1,0 +1,11 @@
+<div id='card' class="container mt-5">
+  <h4>{{book.title}}</h4>
+  <span>Written by: {{book.author}}</span>
+  <p>Summary: {{book.description}}</p>
+  <p>Rating: {{book.rating}}/10</p>
+  <div class="d-flex flex-row " style="width:30%">
+    <a class="btn btn-primary  mr-2" href="/books" style="width:5rem">Return</a>
+    <a class="btn btn-secondary mr-2" href="/books/{{book._id}}/edit" style="width:5rem">Edit</a>
+  </div>
+
+</div>
